@@ -10,13 +10,11 @@ Usage
 
 Credits
 
-License
-
 Description
-My project here is a readme generator built in node js, using my terminal i had to install many packages to allow my generator to function properly
+My project here is a Team Profile generator built in node js, using my terminal i had to install many packages to allow my generator to function properly allowing me to test my app so that it runs and works properly for usage.
 
 Author
-Name: REadME Generator
+Name: ProfileGEnerator
 
 Contact email: chrisdiaz5237@gmail.com
 
@@ -26,7 +24,7 @@ Installation
 to install the project check my repo you can either git pull or clone my repo or you can download via zip folder
 
 Usage
-First you have to install on the nessecary node plug- ins and enter in your terminal (node index) and several prompts will appear after you answer one after the other
+First you have to install on the nessecary node plug- ins and enter in your terminal (node index) and several prompts will appear after you answer one after the other you will be given a teampgen.html file of your team n roles
 
 Credits
-Thank you
+Thank you, for coming and checking out my repo if there is any feedback please do share what I could've done better.
