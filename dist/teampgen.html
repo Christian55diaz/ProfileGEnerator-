@@ -9,45 +9,43 @@
     <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
 </head>
 <body>
-<div class="team-header-container">
-    <div class="team-header">
+<header>
         <h1>My Team</h1>
-    </div>
-</div>
+</header>
             <div class="team-container">
-                <div class="employee-card">
+                <div class="employee-card-container">
                     <div class="card-header">
                             <h2 class="name-title">${manager.getName()}</h2>
-                            <h3 class="job-title"><i class="lni lni-briefcase"></i> ${manager.getRole()}</h3>
+                            <h3 class="job-title"><i class="lni lni-clipboard"></i> ${manager.getRole()}</h3>
                         </div>
-                        <div class="card-body">
-                            <ul class="emp-list">
+                        <div class="employee-card">
+                            <ul class="employee-list">
                                 <li class="list-item">ID:${manager.getId()}</li>
                                 <li class="list-item">Email:<a href = "mailto: ${manager.getEmail()}">${manager.getEmail()}</a></li>
                                 <li class="list-item">Office Number:${manager.getOfficeNumber()}</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="employee-card">
+                    <div class="employee-card-container">
                         <div class="card-header">
-                                <h2 class="name-title">${engineer.getName()}</h2>
-                                <h3 class="job-title"><i class="lni lni-invention"></i> ${engineer.getRole()}</h3>
+                                <h2 class="name">${engineer.getName()}</h2>
+                                <h3 class="job-title"><i class="lni lni-bolt-alt"></i> ${engineer.getRole()}</h3>
                             </div>
-                            <div class="card-body">
-                                <ul class="emp-list">
+                            <div class="employee-card">
+                                <ul class="employee-list">
                                     <li class="list-item">ID:${engineer.getId()}</li>
                                     <li class="list-item">Email:<a href = "mailto: ${engineer.getEmail()}">${engineer.getEmail()}</a></li>
                                     <li class="list-item">Github:<a href= "https://github.com/${engineer.getGithub()}" target="_blank">${engineer.getGithub()}</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="employee-card">
+                        <div class="employee-card-container">
                             <div class="card-header">
                                     <h2 class="name-title"> ${intern.getName()}</h2>
                                     <h3 class="job-title"><i class="lni lni-discord"></i> ${intern.getRole()}</h3>
                                 </div>
-                                <div class="card-body">
-                                    <ul class="emp-list">
+                                <div class="employee-card">
+                                    <ul class="employee-list">
                                         <li class="list-item">ID:${intern.getId()}</li>
                                         <li class="list-item">Email:<a href = "mailto: ${intern.getEmail()}">${intern.getEmail()}</a></li>
                                         <li class="list-item">School:${intern.getSchool()}</li>

@@ -1,47 +1,55 @@
 /* universal */
-*{
+* {
     box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  }
+  :root {
+    --primary: rgb(34, 113, 192);
+    --secondary: rgb(255, 255, 255);
+    --tertiary: rgb(150, 150, 150);
+    --bg: rgba(128, 128, 128, 0.212);
+    --text: rgb(0, 0, 0);
 }
 /* body */
 body{
-    background-color: rgba(128, 128, 128, 0.212);
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bg);
 }
-.team-header-container{
+
+header{
 text-align: center;
-background-color: red;
-padding: 1.5rem;
+background-color: var(--tertiary);
+padding: 15px;
 }
 .team-header{
 font-size: 1.5rem;
-color: seashell;
+color: var(--text);
 }
 .team-container{
    display: flex;
    justify-content: center;
 }
 .employee-card{
-border-radius: 1.3rem;
-background-color: rgb(255, 255, 255);
-width: 20rem;
-height: 15rem;
-margin: 2rem;
+color: var(--text);
+width: 500px;
+height: 200px;
+margin: 10px;
 }
 .card-header{
-background-color: rgba(0, 153, 255, 0.404);
-border-radius: 1rem;
+outline: auto;
+outline-color: var(--bg);
+background-color: var(--primary); 
+color: var(--secondary);
 text-align: center;
-color: rgb(255, 255, 255);
+width: 500px;
+margin: 10px;
 }
-.emp-list{
+.employee-list{
     list-style: none;
     text-align: center;
-    margin: 1rem;
+    margin: 5px;
 }
 .list-item{
     outline: auto;
-    outline-color: rgba(128, 128, 128, 0.144);
-    padding: 1rem;
-    border-radius: .5rem;
+    outline-color: var(--bg);
+    padding: 20px;
 }
