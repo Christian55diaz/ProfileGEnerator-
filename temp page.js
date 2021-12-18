@@ -23,7 +23,7 @@ const generateTeam= team =>{
         <div class="employee-card">
     <div class="card-header">
             <h2 class="name-title">${engineer.getName()}</h2>
-            <h3 class="job-title"><i class="lni lni-invention"></i> ${engineer.getRole()}</h3>
+            <h3 class="job-title"><i class="lni lni-discord"></i> ${engineer.getRole()}</h3>
         </div>
         <div class="card-body">
             <ul class="emp-list">
