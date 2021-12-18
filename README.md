@@ -1,6 +1,6 @@
 # Christian Diaz
 # Screenshot
-![screenshot](screenshot.jpg "screenshot")
+![screenshot](/screenshot.jpg "screenshot")
 # Link to video
 [Click here](https://www.youtube.com/watch?v=PN_oE-Kom3k)
   
