@@ -11,85 +11,86 @@ const output_dir= path.resolve(__dirname, "output");
 // this will add into the folder, a file called teampgen.html
 const outputPath= path.join(output_dir, "teampgen.html");
 // render the html(created)
-const renderHtml= require("./src/template-page");
+const renderHtml= require("./src/temppage");
 //make sure team membber roles are in an array so that answers go in that form when pushed to the html
 const teamMembers= [];
 const ids= [];
 //down below is where the array of roles come in and the questions/prompts so that the html can be created
-function teamBuilderMenu(){
-        console.log("Start building your team!")
+function teamGeneratorMenu(){
+        console.log("Welcome, to the team profile generator, build your team with the following questions.")
         // manager starts here
-        inquirer.prompt([
-            {
-                type: "input",
-                name: "managerName",
-                message: "What is the manager's name?",
-                validate: answer =>{
-                    if (answer.length<=1){
-                        console.log(" Please type more than one letter")
+    function addManager(){
+            inquirer.prompt([
+                {
+                    type: "input",
+                    name: "managerName",
+                    message: "What's the manager's name?",
+                    validate: answer =>{
+                        if (answer.length<=1){
+                            console.log(" Please type more than one letter")
+                        }
+                        else{
+                            return true
+                        }
                     }
-                    else{
-                        return true
-                    }
-                }
-
-            },
-            {
-                type: "input",
-                name: "managerId",
-                message: "What is the manager's id?",
-                validate: answer =>{
-                    if (answer.match(/^\d+$/)){
-                        return true
-                    }
-                    else{
-                        console.log("Please enter a number, must be exactly one number")
-                    }
-                }
-            
-            },
-            {
-                type: "input",
-                name: "managerEmail",
-                message: "What is the manager's email address?",
-                validate: answer =>{
-                    if (answer.match(/\S+@\S+\.\S+/)){
-                        return true
-                    }
-                    else{
-                        console.log("Please enter a correct email address")
-                    }
-                }
-            
-            },
-            {
-                type: "input",
-                name: "managerOfficeNumber",
-                message: "What is the manager's office number?",
-                validate: answer =>{
-                    if (answer.match(/^\d+$/)){
-                        return true
-                    }
-                    else{
-                        console.log("Please enter a number, must be exactly one number")
-                    }
-                }
-            
-            }
-        ]).then(answers =>{
-            const manager= new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber)
-            teamMembers.push(manager);
-            ids.push(answers.managerId);
-            generateTeam();
-        });
     
-
+                },
+                {
+                    type: "input",
+                    name: "managerId",
+                    message: "What's the manager's id?",
+                    validate: answer =>{
+                        if (answer.match(/^\d+$/)){
+                            return true
+                        }
+                        else{
+                            console.log("Please enter a number, must be exactly one number")
+                        }
+                    }
+                
+                },
+                {
+                    type: "input",
+                    name: "managerEmail",
+                    message: "What's the manager's email address?",
+                    validate: answer =>{
+                        if (answer.match(/\S+@\S+\.\S+/)){
+                            return true
+                        }
+                        else{
+                            console.log("Please enter a correct email address")
+                        }
+                    }
+                
+                },
+                {
+                    type: "input",
+                    name: "managerOfficeNumber",
+                    message: "What's the manager's office number?",
+                    validate: answer =>{
+                        if (answer.match(/^\d+$/)){
+                            return true
+                        }
+                        else{
+                            console.log("Please enter a number, must be exactly one number")
+                        }
+                    }
+                
+                }
+            ]).then(answers =>{
+                const manager= new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber)
+                teamMembers.push(manager);
+                ids.push(answers.managerId);
+                generateTeam();
+            });
+        }
+        addManager();
     function generateTeam(){
         inquirer.prompt([
             {
                 type:"list",
                 name:"teamMemberChoices",
-                message:"Which type of team member would you like to add",
+                message:"Would you like to add another member? Choose the member you want to add, if not choose I don't want to add anymore members.",
                 choices:[
                     "Engineer",
                     "Intern",
@@ -115,7 +116,7 @@ function teamBuilderMenu(){
             {
                 type: "input",
                 name: "engineerName",
-                message: "What is the engineer's name?",
+                message: "What's the engineer's name?",
                 validate: answer =>{
                     if (answer.length<=1){
                         console.log(" Please type more than one letter")
@@ -128,7 +129,7 @@ function teamBuilderMenu(){
             {
                 type: "input",
                 name: "engineerId",
-                message: "What is the engineer's id number?",
+                message: "What's the engineer's id number?",
                 validate: answer =>{
                     if (answer.match(/^\d+$/)){
                         return true
@@ -141,7 +142,7 @@ function teamBuilderMenu(){
             {
                 type: "input",
                 name: "engineerEmail",
-                message: "What is the engineer's email?",
+                message: "What's the engineer's email?",
                 validate: answer =>{
                     if (answer.match(/\S+@\S+\.\S+/)){
                         return true
@@ -154,7 +155,7 @@ function teamBuilderMenu(){
             {
                 type: "input",
                 name: "engineerGithub",
-                message: "What is the engineer's github account?",
+                message: "What's the engineer's github account?",
                 validate: answer =>{
                     if (answer.length<=1){
                         console.log(" Please type more than one letter")
@@ -177,7 +178,7 @@ function teamBuilderMenu(){
             {
                 type: "input",
                 name: "internName",
-                message: "What is the intern's name?",
+                message: "What's the intern's name?",
                 validate: answer =>{
                     if (answer.length<=1){
                         console.log(" Please type more than one letter")
@@ -190,7 +191,7 @@ function teamBuilderMenu(){
             {
                 type: "input",
                 name: "internId",
-                message: "What is the intern's id number?",
+                message: "What's the intern's id number?",
                 validate: answer =>{
                     if (answer.match(/^\d+$/)){
                         return true
@@ -203,7 +204,7 @@ function teamBuilderMenu(){
             {
                 type: "input",
                 name: "internEmail",
-                message: "What is the intern's email?",
+                message: "What's the intern's email?",
                 validate: answer =>{
                     if (answer.match(/\S+@\S+\.\S+/)){
                         return true
@@ -216,7 +217,7 @@ function teamBuilderMenu(){
             {
                 type: "input",
                 name: "internSchool",
-                message: "What is the intern's school's name?",
+                message: "What's the intern's school's name?",
                 validate: answer =>{
                     if (answer.length<=1){
                         console.log(" Please type more than one letter")
@@ -240,11 +241,11 @@ function createTeam(){
     }
     const htmlTeamPage= renderHtml(teamMembers, ids);
         writeToFile(outputPath, htmlTeamPage)
-        console.log("team saved!!")
+        console.log("Team saved!!")
 };
 // function to save file(shout out Brandon for helping me out with this save file function)
 function writeToFile(fileName, data) {
-    // this writes the 
+    // this writes the html file to the file system
     fs.writeFileSync(fileName, data, err =>{
         if (err) {
            return console.error("err");
@@ -253,6 +254,5 @@ function writeToFile(fileName, data) {
 }
 
 
-// calling the menu to start the application
-teamBuilderMenu();
-
+//calling team generator menu to start the team generator app
+teamGeneratorMenu();

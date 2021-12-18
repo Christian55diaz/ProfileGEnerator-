@@ -6,14 +6,16 @@
   "directories": {
     "test": "jest"
   },
-    "scripts": {
-      "test": "jest"
-    },
-    
+  "scripts": {
+    "test": "jest"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "jest": "^27.4.5"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.0"
   }
 }
